@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Besma Dental Clinic - عيادة بسمة لطب الأسنان</title>
+
+<!-- ======================================================
+  هيكل المجلدات المطلوب:
+  besma-dental/
+  ├── index.html              ← هذا الملف
+  └── images/
+      ├── logo/
+      │   └── logo.png        ← شعار العيادة (مرفق)
+      ├── doctors/
+      │   ├── doctor1.jpg     ← صورة د. بسمة السويبة
+      │   └── doctor2.jpg     ← صورة د. منى العلوي
+      ├── services/
+      │   ├── cleaning.jpg    ← تنظيف الأسنان
+      │   ├── whitening.jpg   ← تبييض الأسنان
+      │   ├── braces.jpg      ← تقويم الأسنان
+      │   ├── implant.jpg     ← زراعة الأسنان
+      │   ├── gum.jpg         ← علاج اللثة
+      │   └── cosmetic.jpg    ← تجميل الأسنان
+      └── gallery/
+          ├── gallery1.jpg    ← الاستقبال
+          ├── gallery2.jpg    ← جهاز الأشعة
+          ├── gallery3.jpg    ← قبل وبعد
+          ├── gallery4.jpg    ← الفريق الطبي
+          ├── gallery5.jpg    ← غرفة العلاج
+          ├── gallery6.jpg    ← تبييض الأسنان
+          ├── gallery7.jpg    ← تقنية الليزر
+          ├── gallery8.jpg    ← طاقم التمريض
+          └── gallery9.jpg    ← زراعة أسنان
+======================================================= -->
+
+<link rel="icon" type="image/png" href="images/logo/logo.png">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<style>
+	@font-face {
+  font-family: myFont;
+  src: url(font.otf);
+}
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #1a7fc1;
+    --primary-dark: #0e5a8a;
+    --primary-light: #e8f4fd;
+    --secondary: #2daa72;
+    --secondary-light: #e8f8f1;
+    --white: #ffffff;
+    --gray-50: #f8fafc;
+    --gray-200: #e2e8f0;
+    --gray-600: #475569;
+    --gray-800: #1e293b;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 4px 20px rgba(26,127,193,0.1);
+    --shadow-hover: 0 8px 30px rgba(26,127,193,0.2);
+    --radius: 12px;
+    --radius-lg: 20px;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'myFont', Tahoma, Arial, sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
+
+  /* ── NAV ── */
+  nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--gray-200); padding: 0 2rem; }
+  .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+
+  /* شعار العيادة - صورة حقيقية */
+  .logo-img { height: 48px; width: auto; max-width: 160px; object-fit: contain; }
+
+  /* fallback إذا لم تُحمَّل الصورة */
+  .logo-fallback { display: none; align-items: center; gap: 8px; }
+  .logo-fallback .logo-icon { width: 42px; height: 42px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; }
+  .logo-fallback .logo-text { font-size: 1.1rem; font-weight: 700; color: var(--primary); line-height: 1.2; }
+  .logo-fallback .logo-text span { display: block; font-size: 0.7rem; font-weight: 400; color: var(--text-light); }
+
+  .nav-links { display: flex; gap: 0.25rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--gray-600); font-size: 0.9rem; padding: 0.4rem 0.8rem; border-radius: 8px; transition: all 0.2s; font-weight: 500; }
+  .nav-links a:hover, .nav-links a.active { color: var(--primary); background: var(--primary-light); }
+  .nav-cta { background: #25d366 !important; color: white !important; padding: 0.5rem 1.2rem !important; border-radius: 25px !important; display: flex !important; align-items: center; gap: 6px; }
+  .nav-cta:hover { background: #1ebe5d !important; color: white !important; }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 14px; margin: -14px; z-index: 1100; position: relative; -webkit-tap-highlight-color: transparent; user-select: none; }
+  .hamburger span { width: 24px; height: 2px; background: var(--gray-800); border-radius: 2px; transition: 0.3s; }
+
+  /* ── SECTIONS ── */
+  section { scroll-margin-top: 70px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+  .section-header { text-align: center; margin-bottom: 3rem; }
+  .section-tag { display: inline-block; background: var(--primary-light); color: var(--primary); font-size: 0.85rem; font-weight: 600; padding: 0.3rem 1rem; border-radius: 25px; margin-bottom: 0.75rem; }
+  .section-title { font-size: 2rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.75rem; }
+  .section-subtitle { color: var(--text-light); font-size: 1.05rem; max-width: 600px; margin: 0 auto; }
+
+  /* ── HERO ── */
+  #home { min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, #f0f9ff 0%, #e8f4fd 40%, #e8f8f1 100%); padding-top: 110px; position: relative; overflow: hidden; }
+  #home::before { content: ''; position: absolute; top: -50%; left: -20%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(26,127,193,0.08) 0%, transparent 70%); border-radius: 50%; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--gray-200); border-radius: 25px; padding: 0.4rem 1rem; font-size: 0.85rem; color: var(--secondary); font-weight: 600; margin-bottom: 1.5rem; }
+  .hero-badge::before { content: '●'; font-size: 0.6rem; color: var(--secondary); }
+  h1 { font-size: 3rem; font-weight: 800; line-height: 1.2; color: var(--gray-800); margin-bottom: 0.5rem; }
+  h1 span { color: var(--primary); }
+  .hero-tagline { font-size: 1.4rem; color: var(--secondary); font-weight: 600; margin-bottom: 1rem; }
+  .hero-desc { color: var(--text-light); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.8; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--primary); color: white; padding: 0.85rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(26,127,193,0.3); }
+  .btn-wa { background: #25d366 !important; }
+  .btn-wa:hover { background: #1ebe5d !important; }
+  .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); padding: 0.85rem 2rem; border-radius: 30px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+  .hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--gray-200); }
+  .stat { text-align: center; }
+  .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--primary); }
+  .stat-label { font-size: 0.8rem; color: var(--text-light); }
+  .hero-visual { position: relative; }
+  .hero-card-main { background: white; border-radius: var(--radius-lg); padding: 2.5rem; box-shadow: var(--shadow); position: relative; z-index: 2; }
+
+  /* شعار كبير في البطاقة */
+  .hero-logo-display { width: 180px; height: 140px; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; }
+  .hero-logo-display img { width: 100%; height: 100%; object-fit: contain; }
+
+  .hero-card-main h3 { text-align: center; font-size: 1.3rem; color: var(--gray-800); margin-bottom: 0.5rem; }
+  .hero-card-main p { text-align: center; color: var(--text-light); font-size: 0.9rem; }
+  .floating-card { position: absolute; background: white; border-radius: var(--radius); padding: 1rem 1.25rem; box-shadow: 0 8px 30px rgba(0,0,0,0.12); display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 600; z-index: 3; }
+  .floating-card.card1 { top: -20px; right: -20px; color: var(--secondary); }
+  .floating-card.card2 { bottom: -20px; left: -20px; color: var(--primary); }
+  .floating-card .fc-icon { width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .card1 .fc-icon { background: var(--secondary-light); }
+  .card2 .fc-icon { background: var(--primary-light); }
+
+  /* ── ABOUT ── */
+  #about { padding: 6rem 0; background: var(--white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+  /* صور قسم "من نحن" */
+  .about-img-real { border-radius: var(--radius); overflow: hidden; }
+  .about-img-real img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .about-img-real.tall { grid-row: span 2; min-height: 280px; }
+  .about-img-real.short { min-height: 130px; }
+
+  /* fallback placeholder */
+  .about-img-placeholder { border-radius: var(--radius); background: linear-gradient(135deg, var(--primary-light), var(--secondary-light)); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: var(--primary); }
+  .about-img-placeholder.tall { grid-row: span 2; min-height: 280px; }
+  .about-img-placeholder.short { min-height: 130px; }
+
+  .values-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .value-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .value-icon { width: 44px; height: 44px; min-width: 44px; border-radius: 10px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .value-text h4 { font-size: 1rem; font-weight: 600; color: var(--gray-800); margin-bottom: 0.2rem; }
+  .value-text p { font-size: 0.9rem; color: var(--text-light); }
+
+  /* ── TEAM ── */
+  .team-section { margin-top: 4rem; }
+  .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 600px; margin: 2rem auto 0; }
+  .team-card { background: white; border: 1px solid var(--gray-200); border-radius: var(--radius-lg); padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; }
+  .team-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+
+  /* صورة الطبيب الحقيقية */
+  .team-avatar-img { width: 100px; height: 100px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid var(--primary); box-shadow: 0 4px 15px rgba(26,127,193,0.2); }
+  .team-avatar-img img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+
+  /* fallback الطبيب */
+  .team-avatar-fallback { width: 100px; height: 100px; border-radius: 50%; background: var(--primary-light); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; border: 3px solid var(--primary); }
+
+  .team-card h4 { font-size: 1rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.3rem; }
+  .team-card .specialty { font-size: 0.85rem; color: var(--primary); font-weight: 600; margin-bottom: 0.5rem; }
+  .team-card .exp { font-size: 0.8rem; color: var(--text-light); }
+
+  /* ── SERVICES ── */
+  #services { padding: 6rem 0; background: var(--gray-50); }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  .service-card { background: white; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--gray-200); transition: all 0.3s; }
+  .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
+
+  /* صورة الخدمة */
+  .service-img-real { height: 180px; overflow: hidden; position: relative; }
+  .service-img-real img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .service-card:hover .service-img-real img { transform: scale(1.05); }
+
+  /* fallback الخدمة */
+  .service-img { height: 160px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+  .service-img.s1 { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .service-img.s2 { background: linear-gradient(135deg, #fef9c3, #fde68a); }
+  .service-img.s3 { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
+  .service-img.s4 { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+  .service-img.s5 { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+  .service-img.s6 { background: linear-gradient(135deg, #f0fdf4, #d1fae5); }
+
+  .service-body { padding: 1.5rem; }
+  .service-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-800); margin-bottom: 0.5rem; }
+  .service-body p { font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.2rem; line-height: 1.6; }
+  .btn-service { display: inline-flex; align-items: center; gap: 6px; background: #25d366; color: white; font-size: 0.85rem; font-weight: 600; padding: 0.5rem 1.25rem; border-radius: 25px; text-decoration: none; transition: all 0.2s; }
+  .btn-service:hover { background: #1ebe5d; transform: translateY(-1px); }
+
+  /* ── GALLERY ── */
+  #gallery { padding: 6rem 0; background: var(--gray-50); }
+  .gallery-tabs { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .gallery-tab { background: white; border: 1.5px solid var(--gray-200); color: var(--gray-600); padding: 0.5rem 1.25rem; border-radius: 25px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
+  .gallery-tab.active { background: var(--primary); color: white; border-color: var(--primary); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .gallery-item { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; cursor: pointer; position: relative; transition: transform 0.3s; }
+  .gallery-item:hover { transform: scale(1.02); }
+
+  /* صورة المعرض الحقيقية */
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s; }
+  .gallery-item:hover img { transform: scale(1.08); }
+
+  /* overlay عند hover */
+  .gallery-overlay { position: absolute; inset: 0; background: rgba(26,127,193,0); display: flex; align-items: flex-end; padding: 1rem; transition: background 0.3s; }
+  .gallery-item:hover .gallery-overlay { background: rgba(26,127,193,0.35); }
+  .gallery-label { color: white; font-size: 0.85rem; font-weight: 600; opacity: 0; transition: opacity 0.3s; text-shadow: 0 1px 4px rgba(0,0,0,0.5); }
+  .gallery-item:hover .gallery-label { opacity: 1; }
+
+  /* fallback المعرض */
+  .gallery-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; font-size: 2.5rem; }
+  .gallery-placeholder span { font-size: 0.85rem; font-weight: 600; }
+  .gp1 { background: linear-gradient(135deg, #dbeafe, #93c5fd); color: #1d4ed8; }
+  .gp2 { background: linear-gradient(135deg, #dcfce7, #86efac); color: #166534; }
+  .gp3 { background: linear-gradient(135deg, #fce7f3, #f9a8d4); color: #9d174d; }
+  .gp4 { background: linear-gradient(135deg, #fef9c3, #fde047); color: #713f12; }
+  .gp5 { background: linear-gradient(135deg, #ede9fe, #c4b5fd); color: #4c1d95; }
+  .gp6 { background: linear-gradient(135deg, #ffedd5, #fed7aa); color: #9a3412; }
+
+  /* ── CONTACT ── */
+  #contact { padding: 6rem 0; background: white; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+  .contact-info h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; color: var(--gray-800); }
+  .contact-info p { color: var(--text-light); margin-bottom: 2rem; }
+  .contact-items { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2rem; }
+  .contact-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .ci-icon { width: 46px; height: 46px; min-width: 46px; border-radius: 12px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+  .ci-label { font-size: 0.8rem; color: var(--text-light); margin-bottom: 0.2rem; }
+  .ci-value { font-size: 0.95rem; font-weight: 600; color: var(--gray-800); }
+
+  /* أيقونات التواصل الاجتماعي SVG */
+  .social-links { display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap; }
+  .social-link { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.25s; flex-shrink: 0; }
+  .social-link svg { width: 20px; height: 20px; fill: white; }
+  .social-link.fb { background: #1877f2; }
+  .social-link.fb:hover { background: #1464d4; transform: translateY(-3px); }
+  .social-link.ig { background: radial-gradient(circle at 30% 110%, #fd5 0%, #f90 25%, #e84393 65%, #833ab4 100%); }
+  .social-link.ig:hover { filter: brightness(1.1); transform: translateY(-3px); }
+  .social-link.wa { background: #25d366; }
+  .social-link.wa:hover { background: #1ebe5d; transform: translateY(-3px); }
+  .social-link.tt { background: #000; }
+  .social-link.tt:hover { background: #333; transform: translateY(-3px); }
+  .social-link.yt { background: #ff0000; }
+  .social-link.yt:hover { background: #cc0000; transform: translateY(-3px); }
+
+  /* map-container replaced with inline iframe */
+  .contact-form-wrapper { background: var(--gray-50); border-radius: var(--radius-lg); padding: 2.5rem; border: 1px solid var(--gray-200); }
+  .contact-form-wrapper h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 2rem; color: var(--gray-800); text-align: center; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: var(--gray-600); margin-bottom: 0.4rem; }
+  .form-group input, .form-group textarea { width: 100%; padding: 0.7rem 1rem; border: 1.5px solid var(--gray-200); border-radius: 10px; font-size: 0.95rem; color: var(--text); background: white; transition: border-color 0.2s; font-family: inherit; direction: rtl; }
+  .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,127,193,0.1); }
+  .btn-submit { width: 100%; background: var(--primary); color: white; border: none; padding: 1rem; border-radius: 30px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: inherit; margin-top: 0.5rem; }
+  .field-error { display: none; color: #dc2626; font-size: 0.8rem; margin-top: 0.3rem; font-weight: 500; }
+  .field-error.show { display: block; }
+  .input-error { border-color: #dc2626 !important; box-shadow: 0 0 0 3px rgba(220,38,38,0.12) !important; background: #fff8f8 !important; }
+  .btn-submit:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--gray-800); color: #cbd5e1; padding: 4rem 0 2rem; }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; }
+  .footer-logo-img { height: 70px; width: auto; max-width: 200px; object-fit: contain; margin-bottom: 1rem; display: block; background: white; border-radius: 10px; padding: 6px 10px; }
+  .footer-desc { color: #94a3b8; font-size: 0.9rem; line-height: 1.8; }
+  .footer-col h4 { color: white; font-size: 1rem; font-weight: 700; margin-bottom: 1.25rem; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+  .footer-links a:hover { color: white; }
+  .footer-bottom { border-top: 1px solid #334155; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .footer-bottom p { font-size: 0.85rem; color: #64748b; }
+  .footer-social { display: flex; gap: 0.6rem; margin-top: 1.25rem; }
+  .footer-social .social-link { width: 36px; height: 36px; }
+  .footer-social .social-link svg { width: 16px; height: 16px; }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; position: absolute; top: 70px; right: 0; left: 0; background: white; flex-direction: column; padding: 1rem; border-bottom: 1px solid var(--gray-200); box-shadow: 0 4px 20px rgba(0,0,0,0.1); gap: 0; }
+    .nav-links.open { display: flex; }
+    .hamburger { display: flex; }
+    .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    h1 { font-size: 2rem; }
+    .floating-card { display: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .footer-brand { grid-column: span 2; }
+    .form-row { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.6rem; }
+    .about-img-grid { grid-template-columns: 1fr; }
+    .about-img-real.tall, .about-img-placeholder.tall { min-height: 200px; }
+    .logo-img { height: 40px; }
+    .hero-stats { gap: 1rem; flex-wrap: wrap; }
+    .team-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 480px) {
+    .container { padding: 0 1rem; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: span 1; }
+    .hero-btns { flex-direction: column; }
+    .btn-primary, .btn-outline, .btn-wa { text-align: center; justify-content: center; }
+    .team-grid { max-width: 100%; }
+  }
+
+  /* ── Emergency Banner ── */
+  .emergency-banner {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 0.6rem 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 999;
+    margin-top: 70px;
+  }
+  .emergency-banner a {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.2);
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    transition: background 0.2s;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .emergency-banner a:hover { background: rgba(255,255,255,0.35); }
+  @media (max-width: 480px) {
+    .emergency-banner { font-size: 0.8rem; gap: 0.75rem; padding: 0.6rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════ NAVIGATION ══════════════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="logo">
+      <!-- شعار العيادة: استبدل logo.png بملفك -->
+      <img src="images/logo/logo1.png"
+           alt="Besma Dental Clinic"
+           class="logo-img"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="logo-fallback">
+        <div class="logo-icon">🦷</div>
+        <div class="logo-text">Besma Dental<span>عيادة بسمة لطب الأسنان</span></div>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="active" onclick="setActive(this)">الرئيسية</a></li>
+      <li><a href="#about" onclick="setActive(this)">من نحن</a></li>
+      <li><a href="#services" onclick="setActive(this)">الخدمات</a></li>
+      <li><a href="#gallery" onclick="setActive(this)">معرض الصور</a></li>
+      <li><a href="#contact" onclick="setActive(this)">تواصل معنا</a></li>
+      <li>
+        <a href="https://wa.me/212664876742" target="_blank" class="nav-cta" onclick="setActive(this)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          احجز عبر واتساب
+        </a>
+      </li>
+    </ul>
+    <div class="hamburger" id="hamburgerBtn">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ شريط الحالات المستعجلة ══ -->
+<div class="emergency-banner">
+  <span style="display:flex;align-items:center;gap:6px;">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13" stroke="white" stroke-width="2"/><line x1="12" y1="17" x2="12.01" y2="17" stroke="white" stroke-width="2"/></svg>
+    حالات الطوارئ متاح 24/7
+  </span>
+  <a href="tel:+212707797351">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+    اتصال: 0707-797-351
+  </a>
+  <a href="https://wa.me/212707797351?text=%D8%AD%D8%A7%D9%84%D8%A9%20%D8%B7%D8%A7%D8%B1%D8%A6%D8%A9" target="_blank">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    واتساب: 0707-797-351
+  </a>
+</div>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-badge">عيادة أسنان متكاملة في قلعة السراغنة</div>
+        <h1>ابتسامة<br><span>صحية</span><br>تبدأ هنا</h1>
+        <p class="hero-tagline">Besma Dental Clinic</p>
+        <p class="hero-desc">نقدم لك أفضل رعاية لأسنانك بأحدث التقنيات وأيدٍ طبية متخصصة. فريقنا من أمهر الأطباء يسهر على صحة ابتسامتك.</p>
+        <div class="hero-btns">
+          <a href="https://wa.me/212664876742" target="_blank" class="btn-primary btn-wa">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+          <a href="#services" class="btn-outline" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+            استكشف خدماتنا
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">+5</div><div class="stat-label">سنوات خبرة</div></div>
+          <div class="stat"><div class="stat-num">+500</div><div class="stat-label">عميل راضٍ</div></div>
+          <div class="stat"><div class="stat-num">2</div><div class="stat-label">أطباء متخصصون</div></div>
+          <div class="stat"><div class="stat-num">98%</div><div class="stat-label">رضا العملاء</div></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card card1">
+          <div class="fc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20,6 9,17 4,12"/></svg></div>
+          <div>معتمدون طبياً</div>
+        </div>
+        <div class="hero-card-main">
+          <!-- شعار كبير داخل البطاقة -->
+          <div class="hero-logo-display">
+            <img src="images/logo/logo1.png" alt="Besma Dental Clinic"
+                 onerror="this.parentElement.innerHTML='<span style=font-size:4rem>🦷</span>'">
+          </div>
+          <h3>رعاية شاملة لأسنانك</h3>
+          <p>من التنظيف إلى الزراعة — كل ما تحتاجه في مكان واحد</p>
+          <div style="display:flex;justify-content:center;gap:0.5rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <span style="background:var(--primary-light);color:var(--primary);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><path d="M12 3v1m0 16v1M4.22 4.22l.7.7m12.16 12.16.7.7M3 12h1m16 0h1M4.22 19.78l.7-.7m12.16-12.16.7-.7"/></svg> تبييض</span>
+            <span style="background:var(--secondary-light);color:var(--secondary);padding:0.3rem 0.8rem;border-radius:20px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> تقويم</span>
+            <span style="background:#fef9c3;color:#92400e;padding:0.3rem 0.8rem;border-radius:20px;font-size:0.8rem;font-weight:600;display:inline-flex;align-items:center;gap:4px;"><svg width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='#92400e' stroke-width='2' stroke-linecap='round'><path d='M12 2C8.5 2 6 4.5 6 7c0 1.5.5 3 1 4.5C8 14 8 18 9 21c.5 1.5 1.5 2 2 1.5.5-.5.5-2.5 1-3.5s1-1 1-1 .5.5 1 1 .5 3 1 3.5c.5.5 1.5 0 2-1.5 1-3 1-7 2-9.5.5-1.5 1-3 1-4.5C21 4.5 18.5 2 15 2c-1 0-2 .5-3 .5S13 2 12 2z'/></svg> زراعة</span>
+          </div>
+        </div>
+        <div class="floating-card card2">
+          <div class="fc-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <div>تقييم 4.9/5</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ ABOUT ══════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-grid">
+        <!--
+          استبدل gallery1.jpg و gallery2.jpg و gallery5.jpg بصور العيادة الحقيقية
+          أو اجعلها تشير إلى مجلد images/gallery/
+        -->
+        <div class="about-img-real tall">
+          <img src="images/gallery/gallery1.jpg" alt="استقبال العيادة"
+               onerror="this.parentElement.classList.add('about-img-placeholder'); this.parentElement.innerHTML='🏥';">
+        </div>
+        <div class="about-img-real short">
+          <img src="images/gallery/gallery4.jpg" alt="الفريق الطبي"
+               onerror="this.parentElement.classList.add('about-img-placeholder'); this.parentElement.innerHTML='👨‍⚕️';">
+        </div>
+        <div class="about-img-real short">
+          <img src="images/gallery/gallery2.jpg" alt="أجهزة العيادة"
+               onerror="this.parentElement.classList.add('about-img-placeholder'); this.parentElement.innerHTML='🔬';">
+        </div>
+      </div>
+      <div>
+        <div class="section-tag">من نحن</div>
+        <h2 class="section-title" style="text-align:right;">عيادة بسمة — رفيقتك نحو ابتسامة أجمل</h2>
+        <p style="color:var(--text-light);line-height:1.8;margin-bottom:1.5rem;">
+          تأسست عيادة بسمة لطب الأسنان عام 2021 بهدف تقديم خدمات طب أسنان متكاملة بأعلى معايير الجودة. على مدار أكثر من 5 سنوات، أصبحنا وجهة موثوقة لمئات المرضى في قلعة السراغنة.
+        </p>
+        <p style="color:var(--text-light);line-height:1.8;margin-bottom:2rem;">
+          رؤيتنا: أن يحظى كل شخص بأسنان صحية وابتسامة واثقة. قيمنا: النزاهة، التميز، الرحمة، والابتكار المستمر.
+        </p>
+        <div class="values-list">
+          <div class="value-item">
+            <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 21 12 17 16 21"/><path d="M5 3H19"/><path d="M5 3c0 5 2 8 7 10"/><path d="M19 3c0 5-2 8-7 10"/><line x1="12" y1="17" x2="12" y2="13"/></svg></div>
+            <div class="value-text"><h4>خبرة 5+ سنوات</h4><p>فريق طبي ذو كفاءة عالية وخبرة واسعة في جميع تخصصات طب الأسنان</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></div>
+            <div class="value-text"><h4>تقنيات حديثة</h4><p>أجهزة طبية متطورة وأساليب علاجية مبتكرة لأفضل النتائج</p></div>
+          </div>
+          <div class="value-item">
+            <div class="value-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="var(--primary)" stroke="none"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+            <div class="value-text"><h4>رعاية إنسانية</h4><p>نتعامل مع كل مريض باهتمام شخصي وتعاطف حقيقي</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <div class="section-header">
+        <div class="section-tag">فريقنا الطبي</div>
+        <h2 class="section-title">نخبة من أفضل الأطباء</h2>
+        <p class="section-subtitle">فريق متخصص ومتكامل يضع صحتك في المقام الأول</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <!--
+            ضع صورة الطبيبة في: images/doctors/doctor1.jpg
+            الصورة ستظهر دائرية تلقائياً
+          -->
+          <div class="team-avatar-img">
+            <img src="images/doctors/doctor1.jpg" alt="د. بسمة السويبة"
+                 onerror="this.parentElement.classList.remove('team-avatar-img'); this.parentElement.classList.add('team-avatar-fallback'); this.parentElement.innerHTML='👩‍⚕️';">
+          </div>
+          <h4>د. بسمة السويبة</h4>
+          <div class="specialty">طب الأسنان العام</div>
+          <div class="exp"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg> 6 سنوات خبرة • جامعة محمد الخامس</div>
+        </div>
+        <div class="team-card">
+          <!--
+            ضع صورة الطبيبة في: images/doctors/doctor2.jpg
+          -->
+          <div class="team-avatar-img">
+            <img src="images/doctors/doctor2.jpg" alt="د. منى العلوي"
+                 onerror="this.parentElement.classList.remove('team-avatar-img'); this.parentElement.classList.add('team-avatar-fallback'); this.parentElement.innerHTML='👩‍⚕️';">
+          </div>
+          <h4>د. منى العلوي</h4>
+          <div class="specialty">تقويم الأسنان</div>
+          <div class="exp"><svg width="16" height="16" viewBox="0 0 24 24" fill="#f59e0b" stroke="none"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg> 6 سنوات • دكتوراه متخصصة</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICES ══════════════ -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">خدماتنا</div>
+      <h2 class="section-title">خدمات شاملة لأسنان مثالية</h2>
+      <p class="section-subtitle">نوفر طيفًا واسعًا من خدمات طب الأسنان بأحدث التقنيات العالمية</p>
+    </div>
+    <div class="services-grid">
+
+      <!-- خدمة 1: تنظيف -->
+      <div class="service-card">
+        <div class="service-img-real">
+          <img src="images/services/cleaning.jpg" alt="تنظيف الأسنان"
+               onerror="this.parentElement.outerHTML='<div class=\'service-img s1\'>🪥</div>';">
+        </div>
+        <div class="service-body">
+          <h3>تنظيف الأسنان الاحترافي</h3>
+          <p>إزالة الجير والبقع بأجهزة التنظيف بالموجات فوق الصوتية. تنظيف عميق للحفاظ على صحة اللثة والحماية من التسوس.</p>
+          <a href="https://wa.me/212664876742?text=أريد حجز موعد لتنظيف الأسنان" target="_blank" class="btn-service">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- خدمة 2: تبييض -->
+      <div class="service-card">
+        <div class="service-img-real">
+          <img src="images/services/whitening.jpg" alt="تبييض الأسنان"
+               onerror="this.parentElement.outerHTML='<div class=\'service-img s2\'>✨</div>';">
+        </div>
+        <div class="service-body">
+          <h3>تبييض الأسنان</h3>
+          <p>تبييض آمن وفعال بتقنيات متطورة يمنحك أسنانًا أكثر بياضًا بعدة درجات في جلسة واحدة. نتائج مذهلة وفورية.</p>
+          <a href="https://wa.me/212664876742?text=أريد حجز موعد لتبييض الأسنان" target="_blank" class="btn-service">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- خدمة 3: تقويم -->
+      <div class="service-card">
+        <div class="service-img-real">
+          <img src="images/services/braces.jpg" alt="تقويم الأسنان"
+               onerror="this.parentElement.outerHTML='<div class=\'service-img s3\'>🔧</div>';">
+        </div>
+        <div class="service-body">
+          <h3>تقويم الأسنان</h3>
+          <p>تقويم تقليدي وشفاف (Invisalign) لتصحيح اتجاه الأسنان وتحقيق ابتسامة منتظمة. خطط علاجية مخصصة لكل حالة.</p>
+          <a href="https://wa.me/212664876742?text=أريد حجز موعد لتقويم الأسنان" target="_blank" class="btn-service">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- خدمة 4: زراعة -->
+      <div class="service-card">
+        <div class="service-img-real">
+          <img src="images/services/implant.jpg" alt="زراعة الأسنان"
+               onerror="this.parentElement.outerHTML='<div class=\'service-img s4\'>🦷</div>';">
+        </div>
+        <div class="service-body">
+          <h3>زراعة الأسنان</h3>
+          <p>زراعة دائمة بجذور تيتانيوم عالية الجودة تعمل كأسنان طبيعية. حل مثالي لتعويض الأسنان المفقودة بشكل دائم.</p>
+          <a href="https://wa.me/212664876742?text=أريد حجز موعد لزراعة الأسنان" target="_blank" class="btn-service">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- خدمة 5: لثة -->
+      <div class="service-card">
+        <div class="service-img-real">
+          <img src="images/services/gum.jpg" alt="علاج اللثة"
+               onerror="this.parentElement.outerHTML='<div class=\'service-img s5\'>💊</div>';">
+        </div>
+        <div class="service-body">
+          <h3>علاج أمراض اللثة</h3>
+          <p>تشخيص ومعالجة التهابات اللثة والحالات المتقدمة باستخدام أحدث البروتوكولات العلاجية للحفاظ على صحة الفم.</p>
+          <a href="https://wa.me/212664876742?text=أريد حجز موعد لعلاج اللثة" target="_blank" class="btn-service">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+        </div>
+      </div>
+
+      <!-- خدمة 6: تجميل -->
+      <div class="service-card">
+        <div class="service-img-real">
+          <img src="images/services/cosmetic.jpg" alt="تجميل الأسنان"
+               onerror="this.parentElement.outerHTML='<div class=\'service-img s6\'>😁</div>';">
+        </div>
+        <div class="service-body">
+          <h3>تجميل الأسنان</h3>
+          <p>قشور الأسنان، التيجان الخزفية، والابتسامة الهوليوودية. نحول ابتسامتك إلى تحفة فنية تعكس شخصيتك.</p>
+          <a href="https://wa.me/212664876742?text=أريد حجز موعد لتجميل الأسنان" target="_blank" class="btn-service">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            احجز عبر واتساب
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ GALLERY ══════════════ -->
+<section id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">معرض الصور</div>
+      <h2 class="section-title">اكتشف عيادتنا</h2>
+      <p class="section-subtitle">نماذج من أعمالنا وبيئتنا الطبية المتطورة</p>
+    </div>
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" onclick="filterGallery('all', this)">الكل</button>
+      <button class="gallery-tab" onclick="filterGallery('clinic', this)">العيادة</button>
+      <button class="gallery-tab" onclick="filterGallery('team', this)">الفريق</button>
+      <button class="gallery-tab" onclick="filterGallery('results', this)">النتائج</button>
+      <button class="gallery-tab" onclick="filterGallery('equipment', this)">الأجهزة</button>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!--
+        كل صورة: ضع الملف في images/gallery/
+        عند فشل التحميل يظهر placeholder تلقائياً
+      -->
+      <div class="gallery-item" data-cat="clinic">
+        <img src="images/gallery/gallery1.jpg" alt="الاستقبال"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp1\'>🏥<span>الاستقبال</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">الاستقبال</span></div>
+      </div>
+      <div class="gallery-item" data-cat="equipment">
+        <img src="images/gallery/gallery2.jpg" alt="جهاز الأشعة"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp2\'>🔬<span>جهاز الأشعة</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">جهاز الأشعة</span></div>
+      </div>
+      <div class="gallery-item" data-cat="results">
+        <img src="images/gallery/gallery3.jpg" alt="قبل وبعد"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp3\'>😁<span>قبل وبعد</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">قبل وبعد</span></div>
+      </div>
+      <div class="gallery-item" data-cat="team">
+        <img src="images/gallery/gallery4.jpg" alt="الفريق الطبي"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp4\'>👨‍⚕️<span>الفريق الطبي</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">الفريق الطبي</span></div>
+      </div>
+      <div class="gallery-item" data-cat="clinic">
+        <img src="images/gallery/gallery5.jpg" alt="غرفة العلاج"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp5\'>🛋️<span>غرفة العلاج</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">غرفة العلاج</span></div>
+      </div>
+      <div class="gallery-item" data-cat="results">
+        <img src="images/gallery/gallery6.jpg" alt="تبييض الأسنان"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp6\'>✨<span>تبييض الأسنان</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">تبييض الأسنان</span></div>
+      </div>
+      <div class="gallery-item" data-cat="equipment">
+        <img src="images/gallery/gallery7.jpg" alt="تقنية الليزر"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp2\'>💡<span>تقنية الليزر</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">تقنية الليزر</span></div>
+      </div>
+      <div class="gallery-item" data-cat="team">
+        <img src="images/gallery/gallery8.jpg" alt="طاقم التمريض"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp1\'>👩‍⚕️<span>طاقم التمريض</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">طاقم التمريض</span></div>
+      </div>
+      <div class="gallery-item" data-cat="results">
+        <img src="images/gallery/gallery9.jpg" alt="زراعة أسنان"
+             onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder gp4\'>🦷<span>زراعة أسنان</span></div>';">
+        <div class="gallery-overlay"><span class="gallery-label">زراعة أسنان</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">تواصل معنا</div>
+      <h2 class="section-title">نحن هنا لمساعدتك</h2>
+      <p class="section-subtitle">تواصل معنا بأي طريقة تناسبك وسنرد عليك في أقرب وقت</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>معلومات الاتصال</h2>
+        <p>يسعدنا الإجابة على استفساراتك وتحديد موعد يناسبك.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="ci-label">العنوان</div><div class="ci-value">حي النخلة 2، رقم 92، قلعة السراغنة، المغرب</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg></div>
+            <div><div class="ci-label">الهاتف</div><div class="ci-value">+212 664-876-742</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon" style="background:#fee2e2;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div>
+              <div class="ci-label" style="color:#dc2626;font-weight:700;">🚨 طوارئ 24/7</div>
+              <div class="ci-value" style="display:flex;gap:0.75rem;flex-wrap:wrap;align-items:center;">
+                <a href="tel:+212707797351" style="color:#dc2626;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg> 0707-797-351</a>
+                <a href="https://wa.me/212707797351?text=%D8%AD%D8%A7%D9%84%D8%A9%20%D8%B7%D8%A7%D8%B1%D8%A6%D8%A9" target="_blank" style="color:#25d366;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:4px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> واتساب</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="ci-label">البريد الإلكتروني</div><div class="ci-value">contact@besma-dental.ma</div></div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg></div>
+            <div><div class="ci-label">ساعات العمل</div><div class="ci-value">الاثنين – السبت: 9:00 – 19:00</div></div>
+          </div>
+        </div>
+
+        <!-- أيقونات التواصل الاجتماعي SVG -->
+        <div class="social-links">
+
+          <!-- Facebook -->
+          <a href="#" class="social-link fb" title="Facebook" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+
+          <!-- Instagram -->
+          <a href="#" class="social-link ig" title="Instagram" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+            </svg>
+          </a>
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/212664876742" target="_blank" class="social-link wa" title="WhatsApp" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+
+          <!-- TikTok -->
+          <a href="#" class="social-link tt" title="TikTok" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+            </svg>
+          </a>
+
+          <!-- YouTube -->
+          <a href="#" class="social-link yt" title="YouTube" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.495 6.205a3.007 3.007 0 00-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 00.527 6.205a31.247 31.247 0 00-.522 5.805 31.247 31.247 0 00.522 5.783 3.007 3.007 0 002.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 002.088-2.088 31.247 31.247 0 00.5-5.783 31.247 31.247 0 00-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/>
+            </svg>
+          </a>
+
+        </div>
+
+        <div style="border-radius:var(--radius-lg);overflow:hidden;height:300px;margin-top:1.5rem;border:1px solid var(--gray-200);box-shadow:var(--shadow);">
+          <iframe
+            src="https://maps.google.com/maps?q=Besma+Dental+Clinic,+Kelaat+Sraghna,+Morocco&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+            width="100%" height="100%" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="موقع عيادة بسمة">
+          </iframe>
+        </div>
+      </div>
+
+      <div>
+        <div class="contact-form-wrapper">
+          <h3 style="display:flex;align-items:center;justify-content:center;gap:8px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> أرسل لنا رسالة</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>الاسم *</label>
+              <input type="text" placeholder="اسمك" id="c_name">
+              <span class="field-error" id="err_name"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:3px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> الرجاء إدخال اسمك</span>
+            </div>
+            <div class="form-group">
+              <label>البريد الإلكتروني *</label>
+              <input type="email" placeholder="example@gmail.com" id="c_email">
+              <span class="field-error" id="err_email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:3px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> الرجاء إدخال بريد إلكتروني صحيح</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>موضوع الرسالة</label>
+            <input type="text" placeholder="عن ماذا تريد أن تتحدث؟" id="c_subject">
+          </div>
+          <div class="form-group">
+            <label>رسالتك *</label>
+            <textarea rows="5" placeholder="اكتب رسالتك هنا..." id="c_message" style="resize:vertical;"></textarea>
+            <span class="field-error" id="err_msg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:3px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> الرجاء كتابة رسالتك</span>
+          </div>
+          <button class="btn-submit" onclick="submitContact()" style="background:#25d366;display:flex;align-items:center;justify-content:center;gap:10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            إرسال عبر واتساب
+          </button>
+          <div id="rateMsg" style="display:none;padding:0.75rem 1rem;background:#fef2f2;border:1px solid #fecaca;border-radius:var(--radius);margin-top:0.75rem;color:#dc2626;font-size:0.875rem;font-weight:500;text-align:center;"></div>
+          <div id="contactSuccess" style="display:none;text-align:center;padding:1.5rem;background:var(--secondary-light);border-radius:var(--radius);margin-top:1rem;">
+            <p style="color:var(--secondary);font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg> تم فتح واتساب!</p>
+            <p style="color:var(--text-light);font-size:0.9rem;margin-top:0.3rem;">أرسل الرسالة الجاهزة في واتساب وسنرد عليك قريباً.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo/logo.png" alt="Besma Dental Clinic" class="footer-logo-img"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+        <span style="display:none;color:white;font-size:1.2rem;font-weight:700;margin-bottom:1rem;display:block;">Besma Dental Clinic</span>
+        <p class="footer-desc">نقدم أفضل رعاية لأسنانك منذ عام 2021. فريق متخصص، تقنيات حديثة، ونتائج استثنائية تستحقها.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://wa.me/212664876742" target="_blank" class="social-link wa" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul class="footer-links">
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#services">خدماتنا</a></li>
+          <li><a href="#gallery">معرض الصور</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الخدمات</h4>
+        <ul class="footer-links">
+          <li><a href="#services">تنظيف الأسنان</a></li>
+          <li><a href="#services">تبييض الأسنان</a></li>
+          <li><a href="#services">تقويم الأسنان</a></li>
+          <li><a href="#services">زراعة الأسنان</a></li>
+          <li><a href="#services">علاج اللثة</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل معنا</h4>
+        <ul class="footer-links">
+          <li><a href="tel:+212664876742"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:5px"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.09 6.09l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg> +212 664-876-742</a></li>
+          <li><a href="mailto:contact@besma-dental.ma"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:5px"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> contact@besma-dental.ma</a></li>
+          <li><a href="#contact"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:5px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> قلعة السراغنة، المغرب</a></li>
+          <li><a href="https://wa.me/212664876742" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="display:inline;vertical-align:middle;margin-left:5px"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> واتساب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Besma Dental Clinic — عيادة بسمة لطب الأسنان. جميع الحقوق محفوظة.</p>
+      <p style="display:flex;align-items:center;gap:4px;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:inline;vertical-align:middle;margin-left:5px"><path d="M12 2C8.5 2 6 4.5 6 7c0 1.5.5 3 1 4.5C8 14 8 18 9 21c.5 1.5 1.5 2 2 1.5.5-.5.5-2.5 1-3.5s1-1 1-1 .5.5 1 1 .5 3 1 3.5c.5.5 1.5 0 2-1.5 1-3 1-7 2-9.5.5-1.5 1-3 1-4.5C21 4.5 18.5 2 15 2c-1 0-2 .5-3 .5S13 2 12 2z"/></svg> ابتسامة صحية تبدأ هنا</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Hamburger fix for mobile (no double-fire) ──
+  document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('hamburgerBtn');
+    if (!btn) return;
+    btn.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      document.getElementById('navLinks').classList.toggle('open');
+    }, { passive: false });
+    btn.addEventListener('click', function(e) {
+      if (e.pointerType === 'mouse') {
+        document.getElementById('navLinks').classList.toggle('open');
+      }
+    });
+  });
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+
+  // ── XSS Sanitizer ──
+  function sanitize(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .trim();
+  }
+
+  // ── Rate Limiter ──
+  var _lastSubmit = 0, _submitCount = 0, _blocked = false;
+  function checkRateLimit() {
+    var now = Date.now();
+    if (_blocked) {
+      showRateMsg('تم حظرك مؤقتاً. انتظر دقيقة.');
+      return false;
+    }
+    if (now - _lastSubmit < 10000) {
+      _submitCount++;
+      if (_submitCount >= 3) {
+        _blocked = true;
+        setTimeout(function(){ _blocked = false; _submitCount = 0; }, 60000);
+        showRateMsg('الرجاء الانتظار دقيقة كاملة.');
+        return false;
+      }
+      var rem = Math.ceil((10000 - (now - _lastSubmit)) / 1000);
+      showRateMsg('الرجاء الانتظار ' + rem + ' ثوانٍ قبل الإرسال مجدداً.');
+      return false;
+    }
+    _submitCount = 0;
+    _lastSubmit = now;
+    return true;
+  }
+  function showRateMsg(msg) {
+    var el = document.getElementById('rateMsg');
+    if (el) { el.textContent = msg; el.style.display = 'block';
+      setTimeout(function(){ el.style.display = 'none'; }, 8000); }
+  }
+  function setActive(el) {
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('navLinks').classList.remove('open');
+  }
+  window.addEventListener('scroll', () => {
+    const sections = ['home','about','services','gallery','contact'];
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 100) current = id;
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+    });
+  });
+  function clearError(id, errId) {
+    var el = document.getElementById(id);
+    var err = document.getElementById(errId);
+    if (el) { el.classList.remove('input-error'); el.addEventListener('input', function(){ el.classList.remove('input-error'); if(err) err.classList.remove('show'); }, {once:true}); }
+    if (err) err.classList.remove('show');
+  }
+  function showError(id, errId) {
+    var el = document.getElementById(id);
+    var err = document.getElementById(errId);
+    if (el) el.classList.add('input-error');
+    if (err) err.classList.add('show');
+  }
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
+  function submitContact() {
+    if (!checkRateLimit()) return;
+    var name = sanitize(document.getElementById('c_name').value);
+    var email = sanitize(document.getElementById('c_email').value);
+    var subject = sanitize(document.getElementById('c_subject').value);
+    var msg = sanitize(document.getElementById('c_message').value);
+    var valid = true;
+    clearError('c_name','err_name');
+    clearError('c_email','err_email');
+    clearError('c_message','err_msg');
+    if (!name) { showError('c_name','err_name'); valid = false; }
+    if (!email || !isValidEmail(email)) {
+      showError('c_email','err_email');
+      var errEl = document.getElementById('err_email');
+      if (errEl) errEl.innerHTML = email ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:3px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> صيغة البريد غير صحيحة (مثال: name@gmail.com)' : '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:3px"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> الرجاء إدخال بريد إلكتروني';
+      valid = false;
+    }
+    if (!msg) { showError('c_message','err_msg'); valid = false; }
+    if (!valid) return;
+    var nl = '%0A';
+    var line = '%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80%E2%94%80';
+    var text = encodeURIComponent('📩 رسالة من موقع عيادة بسمة') + nl +
+               line + nl +
+               encodeURIComponent('👤 الاسم: ') + encodeURIComponent(name) + nl +
+               encodeURIComponent('📧 البريد: ') + encodeURIComponent(email) + nl +
+               (subject ? encodeURIComponent('📌 الموضوع: ') + encodeURIComponent(subject) + nl : '') +
+               encodeURIComponent('💬 الرسالة: ') + encodeURIComponent(msg);
+    var waURL = 'https://wa.me/212664876742?text=' + text;
+    window.open(waURL, '_blank');
+    document.getElementById('contactSuccess').style.display = 'block';
+    ['c_name','c_email','c_subject','c_message'].forEach(function(id){ document.getElementById(id).value = ''; });
+  }
+  function filterGallery(cat, btn) {
+    document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#galleryGrid .gallery-item').forEach(item => {
+      item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'block' : 'none';
+    });
+  }
+</script>
+</body>
+</html>
